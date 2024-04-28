@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<form>
+          <input style="float:right;margin:5px;font-size:20px;"
+            type="text"
+            name="search"
+          />
+          <button style="float:right;margin:5px;font-size:15px;" type="submit" class="btn btn-primary">Search</button>
+</form>
+                <!-- Nav bar End -->          
+    <div class="main-box">
+
+      {% for n in serviceData %}
+      <div class="box1">
+        <a href="{% url 'table'  n.id %}">
+          <i class="{{n.service_icon}}"></i>
+          <div>
+            <h3>{{n.service_title}}</h3>
+            <p>{{n.service_des}}</p>
+          </div>
+        </a>
+      </div>
+      {% endfor %}      
+     
+    </div>
+     {% endblock %}
+  

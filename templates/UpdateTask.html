@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="tform-container">
+  <form action="/updated_data/{{std.id}}" method="post">
+    {% csrf_token %}
+    <label>Enter Task Name</label>
+    <input type="text" name="taskName" required value="{{std.Name}}" />
+    <label>Task Title</label>
+    <input type="text" name="taskTitle" required value="{{std.Title}}" />
+    <label>Task Description</label>
+    <input type="text" name="taskDes" required value="{{std.Description}}" />
+    <div class="tfrm-btn">
+      <button type="submit">Update</button>
+    </div>
+  </form>
+</div>
+{% endblock %}

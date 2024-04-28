@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="tform-container">
+  <form action="/form/" method="post">
+    {% csrf_token %}
+    <label>Icon</label>
+    <input type="text" name="icon" required />
+    <label>Service Title</label>
+    <input type="text" name="sertitle" required />
+    <label>Service Description</label>
+    <input type="text" name="serdes" required />
+    <div class="tfrm-btn">
+      <button type="submit">submit</button>
+    </div>
+  </form>
+</div>
+{% endblock %}

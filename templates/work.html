@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="work-container">
+  <div class="main-box">
+    {% for n in serviceData %}
+    <div class="box1">
+      <a href="{% url 'table' n.id %}">
+        <i class="{{ n.service_icon }}"></i>
+        <div>
+          <h3>{{ n.service_title }}</h3>
+          <p>{{ n.service_des }}</p>
+        </div>
+        <a href="/sdelete/{{n.id}}" class="trash-btn">
+          <i id="icon" class="fa-solid fa-trash"></i>
+        </a>
+      </a>
+    </div>
+    {% endfor %} {% if user.is_authenticated %}
+    <a id="btn-pls" href="{% url 'form' %}"
+      ><i class="fa-solid fa-circle-plus"></i>Add Services</a
+    >
+    {% endif %}
+  </div>
+</div>
+{% endblock %}
